@@ -1,0 +1,2 @@
+%%
+imageInterval=826;
