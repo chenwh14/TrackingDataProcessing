@@ -1,8 +1,9 @@
-[filename,pathname]=uigetfile({'*.txt'},'请选择Z轴跟踪数据文件');
+[datafilename,datapathname]=uigetfile({'*.txt'},'请选择Z轴跟踪数据文件');
 
-[stagePosition,interImageDistance,command] = textread(fullfile(pathname,filename), '%f,%f,%f');
+[stagePosition,interImageDistance,command] = textread(fullfile(datapathname,datafilename), '%f,%f,%f');
 time=0:0.011:size(interImageDistance)*0.011-0.011;
 %%
+figure;
 subplot(2,2,1);
 plot(time,interImageDistance);
 title('像间距');
