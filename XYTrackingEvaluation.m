@@ -18,7 +18,8 @@ stageErrorX=headErrorX * a11 + a12 * headErrorY;
 stageErrorY=headErrorX * a21 + a22 * headErrorY;
 stageTargetX=stageX+stageErrorX;
 stageTargetY=stageY+stageErrorY;
-
+headSpeedX=diff(stageTargetX)*300;
+headSpeedY=diff(stageTargetY)*300;
 %%
 figure;
 subplot(2,2,1);
