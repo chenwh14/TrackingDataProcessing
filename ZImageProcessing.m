@@ -28,14 +28,11 @@ for i=1:1:imageNumber-1
     %imshow(frame);
 
     template=frame(frameHeight/2-templateHeight/2+1:frameHeight/2+templateHeight/2,frameWidth/2-templateWidth/2+1:frameWidth/2+templateWidth/2);
-    template=medfilt2(template,[3,3]);
     %figure;
     %imshow(template); 
     leftImage=frame(frameHeight/2-templateHeight/2+1:frameHeight/2+templateHeight/2,leftImageStart:leftImageStart+imageDiameter-1);
-    leftImage=medfilt2(leftImage,[3,3]);
     leftResult=matchTemplate(leftImage,template,mask);
     rightImage=frame(frameHeight/2-templateHeight/2+1:frameHeight/2+templateHeight/2,rightImageStart:rightImageStart+imageDiameter-1);
-    rightImage=medfilt2(rightImage,[3,3]);
     rightResult=matchTemplate(rightImage,template,mask);
     
     plot([leftResult,rightResult]);
